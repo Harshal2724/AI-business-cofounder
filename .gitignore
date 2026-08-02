@@ -1,0 +1,13 @@
+# Environment files
+.env
+ai.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Database
+business_ai.db
+
+# VS Code
+.vscode/

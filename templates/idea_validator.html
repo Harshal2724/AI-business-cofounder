@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+    <h1>💡 Idea Validator</h1>
+
+    <p>
+        Validate your startup idea before investing time and money.
+    </p>
+
+</div>
+
+<div class="form-card">
+
+<form action="/idea-validator" method="POST">
+
+<div class="input-group">
+
+<label>Business Idea</label>
+
+<textarea
+name="business_idea"
+placeholder="Describe your startup idea..."
+required></textarea>
+
+</div>
+
+<div class="row">
+
+<div class="input-group">
+
+<label>Business Type</label>
+
+<select name="business_type">
+
+<option>Online</option>
+
+<option>Offline</option>
+
+<option>Hybrid</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Budget</label>
+
+<input
+type="text"
+name="budget"
+placeholder="₹50,000">
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Additional Information (Optional)</label>
+
+<textarea
+name="extra_info"
+placeholder="Anything else the AI should know?"></textarea>
+
+</div>
+
+<button class="submit-btn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Analyze Idea
+
+</button>
+
+</form>
+
+</div>
+<div id="loading" class="loading">
+
+    <div class="loader"></div>
+
+    <h2>🤖 AI Co-Founder is Thinking...</h2>
+
+    <p>
+
+        Analyzing your business and generating professional insights.
+
+    </p>
+
+</div>
+
+{% if result %}
+
+<div class="result-card">
+
+<h2>
+
+🤖 AI Analysis
+
+</h2>
+
+<div class="result">
+
+{{ result }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

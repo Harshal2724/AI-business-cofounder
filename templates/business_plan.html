@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+<h1>📄 Business Planner</h1>
+
+<p>Create a complete business plan using AI.</p>
+
+</div>
+
+<div class="form-card">
+
+<form action="/business-plan" method="POST">
+
+<div class="input-group">
+
+<label>Business Information</label>
+
+<textarea
+name="additional_information"
+placeholder="Describe your business idea, goals, target audience, budget, products, competitors..."
+required></textarea>
+
+</div>
+
+<button class="submit-btn">
+
+📄 Generate Business Plan
+
+</button>
+
+</form>
+
+</div>
+
+{% if result %}
+
+<div class="result-card">
+
+<h2>📄 Business Plan</h2>
+
+<div class="result">
+
+{{ result }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

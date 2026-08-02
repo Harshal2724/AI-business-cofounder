@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-title">
+
+<h1>📈 Marketing Assistant</h1>
+
+<p>Create an AI-powered marketing strategy.</p>
+
+</div>
+
+<div class="form-card">
+
+<form action="/marketing" method="POST">
+
+<div class="input-group">
+
+<label>Business Idea</label>
+
+<input
+type="text"
+name="business_idea"
+required>
+
+</div>
+
+<div class="row">
+
+<div class="input-group">
+
+<label>Business Type</label>
+
+<select name="business_type">
+
+<option>Online</option>
+
+<option>Offline</option>
+
+<option>Hybrid</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Marketing Budget</label>
+
+<input
+type="text"
+name="marketing_budget">
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Target Audience</label>
+
+<input
+type="text"
+name="target_audience">
+
+</div>
+
+<div class="input-group">
+
+<label>Business Goals</label>
+
+<textarea
+name="business_goals"></textarea>
+
+</div>
+
+<div class="input-group">
+
+<label>Additional Information (Optional)</label>
+
+<textarea
+name="extra_info"></textarea>
+
+</div>
+
+<div class="input-group">
+
+<label>Your Marketing Idea (Optional)</label>
+
+<textarea
+name="marketing_idea"></textarea>
+
+</div>
+
+<button class="submit-btn">
+
+📈 Generate Strategy
+
+</button>
+
+</form>
+
+</div>
+
+{% if result %}
+
+<div class="result-card">
+
+<h2>📈 Marketing Strategy</h2>
+
+<div class="result">
+
+{{ result }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
